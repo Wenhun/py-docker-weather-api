@@ -6,13 +6,13 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-CITY = "Paris"
-BASE_URL = "http://api.weatherapi.com/v1/current.json"
+FILTERING = "Paris"
+URL = "http://api.weatherapi.com/v1/current.json"
 KEY = os.getenv("API_KEY")
 
 
 def get_weather() -> None:
-    response = requests.get(f"{BASE_URL}?key={KEY}&q={CITY}")
+    response = requests.get(f"{URL}?key={KEY}&q={FILTERING}")
 
     if response.status_code == 200:
         info = response.json()
